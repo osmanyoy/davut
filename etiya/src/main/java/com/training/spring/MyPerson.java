@@ -1,33 +1,40 @@
 package com.training.spring;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-//@Entity
+@Entity
 public final class MyPerson {
 
-    //    @Id
-    //    @GeneratedValue
-    private long   pId;
-
+    @Id
+    @GeneratedValue
+    private long      pId;
     @NotNull
     @Size(min = 2, max = 30, message = "Error yanlış")
-    private String name;
+    private String    name;
     @NotNull
-    private String surname;
+    private String    surname;
     @NotNull
     @Max(120)
-    private int    age;
+    private int       age;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private MyAddress address;
 
     public long getpId() {
         return this.pId;
     }
 
     public void setName(final String nameParam) {
-
         this.name = nameParam;
     }
 

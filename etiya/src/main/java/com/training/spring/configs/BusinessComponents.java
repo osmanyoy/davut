@@ -3,7 +3,6 @@ package com.training.spring.configs;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -26,8 +25,7 @@ public class BusinessComponents {
     private long                        counter     = 0;
 
     @Bean
-    public MyPersonManager myPersonManager(@Value("${osman.test.prop1}") final String str) {
-        System.out.println("Prop1 : " + str);
+    public MyPersonManager myPersonManager() {
         return new MyPersonManager();
     }
 
