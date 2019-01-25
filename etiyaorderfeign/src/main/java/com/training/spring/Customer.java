@@ -2,16 +2,10 @@ package com.training.spring;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-
 public class Customer implements Serializable {
 
-    @NotEmpty
     private String name;
-    @NotEmpty
     private String surname;
-    @Min(1)
     private int    age;
 
     public String getName() {

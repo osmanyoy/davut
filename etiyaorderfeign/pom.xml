@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.training.spring.training</groupId>
-	<artifactId>etiyaorder</artifactId>
+	<artifactId>etiyaorderfeign</artifactId>
 	<version>1.0.0</version>
-	<name>etiyaorder</name>
+	<name>etiyaorderfeign</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -39,6 +39,10 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
 		<dependency>
